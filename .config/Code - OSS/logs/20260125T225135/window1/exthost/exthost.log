@@ -1,0 +1,138 @@
+2026-01-25 22:51:39.444 [info] Extension host with pid 6123 started
+2026-01-25 22:51:39.444 [info] Skipping acquiring lock for /home/user/.config/Code - OSS/User/workspaceStorage/d804a0680797f7ac7fe9444550544b52.
+2026-01-25 22:51:39.533 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-01-25 22:51:39.609 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-01-25 22:51:39.773 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-01-25 22:51:39.779 [info] ExtensionService#_doActivateExtension be5invis.vscode-custom-css, startup: true, activationEvent: '*'
+2026-01-25 22:51:39.866 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-01-25 22:51:40.003 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-01-25 22:51:40.233 [info] Eager extensions activated
+2026-01-25 22:51:40.245 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-01-25 22:51:40.250 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-01-25 22:51:40.288 [info] ExtensionService#_doActivateExtension alexdauenhauer.catppuccin-noctis-icons, startup: false, activationEvent: 'onStartupFinished'
+2026-01-25 22:51:40.296 [info] ExtensionService#_doActivateExtension BrandonKirbyson.vscode-animations, startup: false, activationEvent: 'onStartupFinished'
+2026-01-25 22:51:40.301 [info] ExtensionService#_doActivateExtension drcika.apc-extension, startup: false, activationEvent: 'onStartupFinished'
+2026-01-25 22:51:40.311 [error] Activating extension drcika.apc-extension failed due to an error:
+2026-01-25 22:51:40.312 [error] TypeError: Cannot read properties of undefined (reading 'filename')
+	at Object.<anonymous> (/home/user/.vscode-oss/extensions/drcika.apc-extension-0.4.1-universal/dist/patch.js:17:52)
+	at Module._compile (node:internal/modules/cjs/loader:1714:14)
+	at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+	at Module.load (node:internal/modules/cjs/loader:1448:32)
+	at Module._load (node:internal/modules/cjs/loader:1270:12)
+	at c._load (node:electron/js2c/node_init:2:17993)
+	at e._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:404:6048)
+	at t._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:222:22598)
+	at r._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:214:24094)
+	at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+	at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+	at Module.require (node:internal/modules/cjs/loader:1470:12)
+	at require (node:internal/modules/helpers:147:16)
+	at Object.<anonymous> (/home/user/.vscode-oss/extensions/drcika.apc-extension-0.4.1-universal/dist/extension.js:7:17)
+	at Module._compile (node:internal/modules/cjs/loader:1714:14)
+	at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+	at Module.load (node:internal/modules/cjs/loader:1448:32)
+	at Module._load (node:internal/modules/cjs/loader:1270:12)
+	at c._load (node:electron/js2c/node_init:2:17993)
+	at e._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:404:6048)
+	at t._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:222:22598)
+	at r._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:214:24094)
+	at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+	at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+	at Module.require (node:internal/modules/cjs/loader:1470:12)
+	at require (node:internal/modules/helpers:147:16)
+	at HX.Cb (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:253:1253)
+2026-01-25 22:51:40.439 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.446 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-01-25 22:51:40.463 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-01-25 22:51:40.573 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-01-25 22:51:40.679 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.681 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.768 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.804 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.809 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.923 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.969 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:40.999 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:49.320 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:49.345 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:51:49.358 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:11.476 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:11.594 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:11.701 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:22.942 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:22.967 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:52:23.039 [error] CodeExpectedError: Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+    at rEt.z (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:6793)
+    at rEt.p (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4122)
+    at rEt.o (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:4013)
+    at async Object.factory (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:3853:3763)
+2026-01-25 22:59:25.211 [info] Extension host terminating: renderer closed the MessagePort
+2026-01-25 22:59:25.335 [info] Extension host with pid 6123 exiting with code 0

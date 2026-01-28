@@ -1,0 +1,21 @@
+2026-01-28 10:40:50.551 [info] Started local extension host with pid 50686.
+2026-01-28 10:40:50.619 [error] Extension 'ms-python.debugpy CANNOT USE these API proposals 'portsAttributes, debugVisualization, contribViewsWelcome'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:40:50.620 [error] Extension 'ms-python.python CANNOT USE these API proposals 'contribEditorContentMenu, quickPickSortByLabel, testObserver, quickPickItemTooltip, terminalDataWriteEvent, terminalExecuteCommandEvent, codeActionAI, notebookReplDocument, notebookVariableProvider'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:40:50.621 [error] Extension 'ms-python.vscode-python-envs CANNOT USE these API proposals 'terminalShellEnv, terminalDataWriteEvent'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:40:50.660 [error] [ms-python.python]: editor/content is a proposed menu identifier. It requires 'package.json#enabledApiProposals: ["contribEditorContentMenu"]' and is only available when running out of dev or with the following command line switch: --enable-proposed-api ms-python.python
+2026-01-28 10:40:51.914 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:40:53.075 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2026-01-28 10:40:53.207 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:40:53.286 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-28 10:40:53.373 [info] [perf] Render performance baseline is 25ms
+2026-01-28 10:40:54.800 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:40:58.803 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:40:59.169 [warning] SettingsEditor2: Settings not included in settingsLayout.ts: extensions.requestTimeout, github.copilot.chat.agent.terminal.allowList, github.copilot.chat.agent.terminal.denyList, terminal.integrated.developer.devMode, terminal.integrated.developer.ptyHost.latency, terminal.integrated.developer.ptyHost.startupDelay, chat.statusWidget.sku
+2026-01-28 10:42:01.177 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:42:07.401 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.

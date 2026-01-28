@@ -1,0 +1,83 @@
+2026-01-28 10:42:24.532 [info] Started local extension host with pid 51153.
+2026-01-28 10:42:24.626 [error] Extension 'ms-python.debugpy CANNOT USE these API proposals 'portsAttributes, debugVisualization, contribViewsWelcome'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:42:24.627 [error] Extension 'ms-python.python CANNOT USE these API proposals 'contribEditorContentMenu, quickPickSortByLabel, testObserver, quickPickItemTooltip, terminalDataWriteEvent, terminalExecuteCommandEvent, codeActionAI, notebookReplDocument, notebookVariableProvider'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:42:24.627 [error] Extension 'ms-python.vscode-python-envs CANNOT USE these API proposals 'terminalShellEnv, terminalDataWriteEvent'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-28 10:42:24.668 [error] [ms-python.python]: editor/content is a proposed menu identifier. It requires 'package.json#enabledApiProposals: ["contribEditorContentMenu"]' and is only available when running out of dev or with the following command line switch: --enable-proposed-api ms-python.python
+2026-01-28 10:42:26.126 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:42:27.039 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2026-01-28 10:42:27.387 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:42:28.155 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-28 10:42:28.574 [info] [perf] Render performance baseline is 27ms
+2026-01-28 10:42:32.730 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-28 10:42:32.834 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-28 10:42:32.835 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-28 10:42:33.109 [error] Titlebar overlay is not enabled: Error: Titlebar overlay is not enabled
+    at yc.updateWindowControls (file:///usr/lib/code/out/main.js:86:54795)
+    at fc.updateWindowControls (file:///usr/lib/code/out/main.js:65:8989)
+    at Object.call (file:///usr/lib/code/out/main.js:33:4562)
+    at _f.s (file:///usr/lib/code/out/main.js:31:14882)
+    at _f.q (file:///usr/lib/code/out/main.js:31:14405)
+    at na.value (file:///usr/lib/code/out/main.js:31:13807)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.D (file:///usr/lib/code/out/main.js:30:2398)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2615)
+    at na.value (file:///usr/lib/code/out/main.js:28:5389)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at na.value (file:///usr/lib/code/out/main.js:28:5577)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at N (file:///usr/lib/code/out/main.js:28:7871)
+    at IpcMainImpl.i (file:///usr/lib/code/out/main.js:36:10815)
+    at IpcMainImpl.emit (node:events:519:28)
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:106626)
+    at Session.emit (node:events:519:28)
+2026-01-28 10:42:33.117 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-28 10:42:33.217 [error] Titlebar overlay is not enabled: Error: Titlebar overlay is not enabled
+    at yc.updateWindowControls (file:///usr/lib/code/out/main.js:86:54795)
+    at fc.updateWindowControls (file:///usr/lib/code/out/main.js:65:8989)
+    at Object.call (file:///usr/lib/code/out/main.js:33:4562)
+    at _f.s (file:///usr/lib/code/out/main.js:31:14882)
+    at _f.q (file:///usr/lib/code/out/main.js:31:14405)
+    at na.value (file:///usr/lib/code/out/main.js:31:13807)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.D (file:///usr/lib/code/out/main.js:30:2398)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2615)
+    at na.value (file:///usr/lib/code/out/main.js:28:5389)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at na.value (file:///usr/lib/code/out/main.js:28:5577)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at N (file:///usr/lib/code/out/main.js:28:7871)
+    at IpcMainImpl.i (file:///usr/lib/code/out/main.js:36:10815)
+    at IpcMainImpl.emit (node:events:519:28)
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:106626)
+    at Session.emit (node:events:519:28)
+2026-01-28 10:42:35.171 [error] Titlebar overlay is not enabled: Error: Titlebar overlay is not enabled
+    at yc.updateWindowControls (file:///usr/lib/code/out/main.js:86:54795)
+    at fc.updateWindowControls (file:///usr/lib/code/out/main.js:65:8989)
+    at Object.call (file:///usr/lib/code/out/main.js:33:4562)
+    at _f.s (file:///usr/lib/code/out/main.js:31:14882)
+    at _f.q (file:///usr/lib/code/out/main.js:31:14405)
+    at na.value (file:///usr/lib/code/out/main.js:31:13807)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.D (file:///usr/lib/code/out/main.js:30:2398)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2615)
+    at na.value (file:///usr/lib/code/out/main.js:28:5389)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at na.value (file:///usr/lib/code/out/main.js:28:5577)
+    at P.C (file:///usr/lib/code/out/main.js:30:2328)
+    at P.fire (file:///usr/lib/code/out/main.js:30:2546)
+    at N (file:///usr/lib/code/out/main.js:28:7871)
+    at IpcMainImpl.i (file:///usr/lib/code/out/main.js:36:10815)
+    at IpcMainImpl.emit (node:events:519:28)
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:106626)
+    at Session.emit (node:events:519:28)

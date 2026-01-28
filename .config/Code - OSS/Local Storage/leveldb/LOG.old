@@ -1,0 +1,3 @@
+2026/01/28-10:42:23.362 c6fb Reusing MANIFEST /home/user/.config/Code - OSS/Local Storage/leveldb/MANIFEST-000001
+2026/01/28-10:42:23.368 c6fb Recovering log #3
+2026/01/28-10:42:23.368 c6fb Reusing old log /home/user/.config/Code - OSS/Local Storage/leveldb/000003.log 
