@@ -1,0 +1,16 @@
+2026-01-29 21:50:08.058 [info] Started local extension host with pid 6786.
+2026-01-29 21:50:08.521 [error] Extension 'ms-python.debugpy CANNOT USE these API proposals 'portsAttributes, debugVisualization, contribViewsWelcome'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-29 21:50:08.522 [error] Extension 'ms-python.python CANNOT USE these API proposals 'contribEditorContentMenu, quickPickSortByLabel, testObserver, quickPickItemTooltip, terminalDataWriteEvent, terminalExecuteCommandEvent, codeActionAI, notebookReplDocument, notebookVariableProvider'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-29 21:50:08.522 [error] Extension 'ms-python.vscode-python-envs CANNOT USE these API proposals 'terminalShellEnv, terminalDataWriteEvent'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-01-29 21:50:08.561 [error] [ms-python.python]: editor/content is a proposed menu identifier. It requires 'package.json#enabledApiProposals: ["contribEditorContentMenu"]' and is only available when running out of dev or with the following command line switch: --enable-proposed-api ms-python.python
+2026-01-29 21:50:09.779 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-29 21:50:10.565 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2026-01-29 21:50:10.808 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-01-29 21:50:11.099 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-01-29 21:50:11.179 [info] [perf] Render performance baseline is 37ms

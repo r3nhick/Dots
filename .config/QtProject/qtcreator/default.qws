@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorSession>
-<!-- Written by QtCreator 18.0.2, 2026-01-27T18:55:32. -->
+<!-- Written by QtCreator 18.0.2, 2026-02-13T10:36:10. -->
 <qtcreator>
  <data>
   <variable>AutoTest.MessageFilter</variable>
   <valuelist type="QVariantList">
-   <value type="int">22</value>
-   <value type="int">14</value>
-   <value type="int">12</value>
-   <value type="int">3</value>
-   <value type="int">0</value>
-   <value type="int">10</value>
-   <value type="int">16</value>
-   <value type="int">15</value>
-   <value type="int">9</value>
-   <value type="int">4</value>
-   <value type="int">8</value>
-   <value type="int">6</value>
-   <value type="int">13</value>
-   <value type="int">11</value>
-   <value type="int">2</value>
-   <value type="int">5</value>
-   <value type="int">1</value>
-   <value type="int">20</value>
-   <value type="int">7</value>
    <value type="int">21</value>
+   <value type="int">14</value>
+   <value type="int">13</value>
+   <value type="int">10</value>
+   <value type="int">2</value>
+   <value type="int">8</value>
+   <value type="int">0</value>
+   <value type="int">6</value>
+   <value type="int">7</value>
+   <value type="int">20</value>
+   <value type="int">16</value>
+   <value type="int">9</value>
+   <value type="int">11</value>
+   <value type="int">1</value>
+   <value type="int">3</value>
+   <value type="int">12</value>
+   <value type="int">22</value>
+   <value type="int">15</value>
+   <value type="int">5</value>
+   <value type="int">4</value>
   </valuelist>
  </data>
  <data>
@@ -45,7 +45,7 @@
  </data>
  <data>
   <variable>EditorSettings</variable>
-  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNQAAAAEAAABMAC8AaABvAG0AZQAvAHUAcwBlAHIALwBQAHIAbwBnAHIAYQBtAGkAbgBnAC8AUQB0AC8AVABlAHMAdAAvAE0AYQBpAG4ALgBxAG0AbAAAAAwAAAAAIAAAAAIAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAAAAAAAIAAAAAQAAAEwALwBoAG8AbQBlAC8AdQBzAGUAcgAvAFAAcgBvAGcAcgBhAG0AaQBuAGcALwBRAHQALwBUAGUAcwB0AC8ATQBhAGkAbgAuAHEAbQBsAAAAEABNAGEAaQBuAC4AcQBtAGwAAAAXUW1sSlNFZGl0b3IuUU1MSlNFZGl0b3IAAAABogAAAA1jdXJyZW50ZWRpdG9yAAAATAAvAGgAbwBtAGUALwB1AHMAZQByAC8AUAByAG8AZwByAGEAbQBpAG4AZwAvAFEAdAAvAFQAZQBzAHQALwBNAGEAaQBuAC4AcQBtAGwAAAAuAFEAbQBsAEoAUwBFAGQAaQB0AG8AcgAuAFEATQBMAEoAUwBFAGQAaQB0AG8AcgAAACAAAAACAAAAAAAAAAAAAAAHAAAAHAAAAAAAAAAAAAAACAAAAAEAAACPAAAATAAvAGgAbwBtAGUALwB1AHMAZQByAC8AUAByAG8AZwByAGEAbQBpAG4AZwAvAFEAdAAvAFQAZQBzAHQALwBNAGEAaQBuAC4AcQBtAGwAAAAXUW1sSlNFZGl0b3IuUU1MSlNFZGl0b3IAAAAgAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAABAAAATAAvAGgAbwBtAGUALwB1AHMAZQByAC8AUAByAG8AZwByAGEAbQBpAG4AZwAvAFEAdAAvAFQAZQBzAHQALwBNAGEAaQBuAC4AcQBtAGwAAAAA</value>
+  <value type="QByteArray">AAAAD0VkaXRvck1hbmFnZXJWNQAAAAEAAAA2AC8AaABvAG0AZQAvAHUAcwBlAHIALwBEAFoALwBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AdQBpAAAADAAAAAAgAAAAAgAAAp0AAAAAAAAARQAAAAAAAAAAAAAAHQAAAEQAAAABAAAANgAvAGgAbwBtAGUALwB1AHMAZQByAC8ARABaAC8AbQBhAGkAbgB3AGkAbgBkAG8AdwAuAHUAaQAAABoAbQBhAGkAbgB3AGkAbgBkAG8AdwAuAHUAaQAAABxGb3JtRWRpdG9yLkRlc2lnbmVyWG1sRWRpdG9yAAAAAW8AAAANY3VycmVudGVkaXRvcgAAADYALwBoAG8AbQBlAC8AdQBzAGUAcgAvAEQAWgAvAG0AYQBpAG4AdwBpAG4AZABvAHcALgB1AGkAAAA4AEYAbwByAG0ARQBkAGkAdABvAHIALgBEAGUAcwBpAGcAbgBlAHIAWABtAGwARQBkAGkAdABvAHIAAAAgAAAAAgAAAp0AAAAAAAAARQAAAAAAAAAAAAAAHQAAAEQAAAABAAAAfgAAADYALwBoAG8AbQBlAC8AdQBzAGUAcgAvAEQAWgAvAG0AYQBpAG4AdwBpAG4AZABvAHcALgB1AGkAAAAcRm9ybUVkaXRvci5EZXNpZ25lclhtbEVkaXRvcgAAACAAAAACAAACoQAAAAAAAABFAAAAAAAAAAAAAAAdAAAARAAAAAEAAAA2AC8AaABvAG0AZQAvAHUAcwBlAHIALwBEAFoALwBtAGEAaQBuAHcAaQBuAGQAbwB3AC4AdQBpAAAAAA==</value>
  </data>
  <data>
   <variable>ProjectDependencies</variable>
@@ -54,16 +54,16 @@
  <data>
   <variable>ProjectList</variable>
   <valuelist type="QVariantList">
-   <value type="QString">/home/user/Programing/Qt/Test/CMakeLists.txt</value>
+   <value type="QString">/home/user/DZ/CMakeLists.txt</value>
   </valuelist>
  </data>
  <data>
   <variable>StartupProject</variable>
-  <value type="QString">/home/user/Programing/Qt/Test/CMakeLists.txt</value>
+  <value type="QString">/home/user/DZ/CMakeLists.txt</value>
  </data>
  <data>
   <variable>value-ActiveMode</variable>
-  <value type="QString">Edit</value>
+  <value type="QString">Design</value>
  </data>
  <data>
   <variable>value-Breakpoints</variable>
@@ -81,7 +81,28 @@
  </data>
  <data>
   <variable>value-ProjectTree.ExpandData</variable>
-  <valuelist type="QVariantList"/>
+  <valuelist type="QVariantList">
+   <valuelist type="QVariantList">
+    <value type="QString">/home/user/DZ</value>
+    <value type="int">200000</value>
+    <value type="QString">DZ</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/user/DZ</value>
+    <value type="int">200005</value>
+    <value type="QString">Forms</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/user/DZ</value>
+    <value type="int">200005</value>
+    <value type="QString">Header Files</value>
+   </valuelist>
+   <valuelist type="QVariantList">
+    <value type="QString">/home/user/DZ</value>
+    <value type="int">400900</value>
+    <value type="QString">DZ</value>
+   </valuelist>
+  </valuelist>
  </data>
  <data>
   <variable>value-TaskWindow.Categories</variable>

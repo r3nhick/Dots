@@ -1,0 +1,45 @@
+2026-02-01 17:09:35.041 [info] Extension host with pid 87916 started
+2026-02-01 17:09:35.041 [info] Skipping acquiring lock for /home/user/.config/Code - OSS/User/workspaceStorage/d804a0680797f7ac7fe9444550544b52.
+2026-02-01 17:09:35.197 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-02-01 17:09:35.235 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-02-01 17:09:35.297 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-02-01 17:09:35.301 [info] ExtensionService#_doActivateExtension be5invis.vscode-custom-css, startup: true, activationEvent: '*'
+2026-02-01 17:09:35.362 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-02-01 17:09:35.433 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-02-01 17:09:35.556 [info] Eager extensions activated
+2026-02-01 17:09:35.566 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-02-01 17:09:35.570 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-02-01 17:09:35.603 [info] ExtensionService#_doActivateExtension alexdauenhauer.catppuccin-noctis-icons, startup: false, activationEvent: 'onStartupFinished'
+2026-02-01 17:09:35.610 [info] ExtensionService#_doActivateExtension BrandonKirbyson.vscode-animations, startup: false, activationEvent: 'onStartupFinished'
+2026-02-01 17:09:35.613 [info] ExtensionService#_doActivateExtension drcika.apc-extension, startup: false, activationEvent: 'onStartupFinished'
+2026-02-01 17:09:35.620 [error] Activating extension drcika.apc-extension failed due to an error:
+2026-02-01 17:09:35.620 [error] TypeError: Cannot read properties of undefined (reading 'filename')
+	at Object.<anonymous> (/home/user/.vscode-oss/extensions/drcika.apc-extension-0.4.1-universal/dist/patch.js:17:52)
+	at Module._compile (node:internal/modules/cjs/loader:1714:14)
+	at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+	at Module.load (node:internal/modules/cjs/loader:1448:32)
+	at Module._load (node:internal/modules/cjs/loader:1270:12)
+	at c._load (node:electron/js2c/node_init:2:17993)
+	at e._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:404:6048)
+	at t._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:222:22598)
+	at r._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:214:24094)
+	at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+	at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+	at Module.require (node:internal/modules/cjs/loader:1470:12)
+	at require (node:internal/modules/helpers:147:16)
+	at Object.<anonymous> (/home/user/.vscode-oss/extensions/drcika.apc-extension-0.4.1-universal/dist/extension.js:7:17)
+	at Module._compile (node:internal/modules/cjs/loader:1714:14)
+	at Module._extensions..js (node:internal/modules/cjs/loader:1848:10)
+	at Module.load (node:internal/modules/cjs/loader:1448:32)
+	at Module._load (node:internal/modules/cjs/loader:1270:12)
+	at c._load (node:electron/js2c/node_init:2:17993)
+	at e._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:404:6048)
+	at t._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:222:22598)
+	at r._load (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:214:24094)
+	at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+	at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+	at Module.require (node:internal/modules/cjs/loader:1470:12)
+	at require (node:internal/modules/helpers:147:16)
+	at HX.Cb (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:253:1253)
+2026-02-01 17:09:35.621 [info] Extension host terminating: renderer closed the MessagePort
+2026-02-01 17:09:35.630 [info] Extension host with pid 87916 exiting with code 0

@@ -1,0 +1,21 @@
+00:00:00.295135 VirtualBox GUI VM Selector Window 7.2.6 r172322 linux.amd64 (Jan 28 2026 17:11:43) release log
+00:00:00.295136 Log opened 2026-02-02T09:02:42.341594000Z
+00:00:00.295137 Build Type: release
+00:00:00.295138 OS Product: Linux
+00:00:00.295139 OS Release: 6.18.7-zen1-1-zen
+00:00:00.295139 OS Version: #1 ZEN SMP PREEMPT_DYNAMIC Sat, 24 Jan 2026 00:47:26 +0000
+00:00:00.295165 DMI Product Name: Aspire A315-24P
+00:00:00.295173 DMI Product Version: V1.09
+00:00:00.295178 Firmware type: UEFI
+00:00:00.295288 Secure Boot: Disabled
+00:00:00.295322 Host RAM: 7160MB (6.9GB) total, 4959MB (4.8GB) available
+00:00:00.295323 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.295324 Process ID: 21775
+00:00:00.295324 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.295352 Qt version: 6.10.2
+00:00:00.295892 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.312055 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.757859 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 0x28 x 1920x1052
+00:00:00.763805 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:05.418539 GUI: UICommon: Handling aboutToQuit request..
+00:00:06.325728 GUI: UICommon: aboutToQuit request handled!

@@ -1,3 +1,0 @@
-2026-01-25 22:51:35.630 [info] update#setState disabled
-2026-01-25 22:51:35.632 [info] update#ctor - updates are disabled as there is no update URL
-2026-01-25 22:59:25.256 [error] CodeWindow: renderer process gone (reason: clean-exit, code: <unknown>)

@@ -44,6 +44,7 @@ zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+
 # ==============================
 # Completions (FAST)
 # ==============================
@@ -63,6 +64,8 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+#bindkey '^R' fzf-history-widget
+
 
 # Alt + → / ← — рух по словах
 bindkey "^[[1;3C" forward-word   # Alt + →
@@ -89,9 +92,14 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
-
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=always $realpath'
+#zstyle ':fzf-tab:*' switch-group '<' '>'
+#zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border
+#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -1 $realpath'
+
+#nvim <TAB> bat <TAB> rm <TAB> mv <TAB>cp <TAB>
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers $realpath 2>/dev/null || eza --icons -1 $realpath'
 
 # ==============================
 # Aliases
@@ -109,6 +117,9 @@ alias rf='rm -rf'
 alias tld='tldr'
 alias llm='gpt4all-chat'
 alias yy='yazi'
+alias lg='lazygit'
+alias tt='smassh'
+#alias g='ps aux | grep '
 #alias fk='thefuck'
 
 # Python venv helpers
@@ -137,3 +148,4 @@ mkpip() {
 eval "$(fzf --zsh)"
 eval $(thefuck --alias fk)
 eval "$(zoxide init --cmd cd zsh)"
+

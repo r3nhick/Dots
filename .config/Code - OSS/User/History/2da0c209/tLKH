@@ -1,0 +1,20 @@
+bsudo pacman -Suy zsh
+chsh -s $(which zsh)
+ls
+ls
+cd
+onefetch
+ls -a ~ | grep .git
+rm -rf ~/.git
+onefetch
+python main.py
+python main.py
+python main.py
+python main.py
+zsh
+less
+exit
+python main.py
+exit
+ls
+zsh

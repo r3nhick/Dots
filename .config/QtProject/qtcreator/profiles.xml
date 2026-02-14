@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProfiles>
-<!-- Written by QtCreator 18.0.2, 2026-01-27T18:55:31. -->
+<!-- Written by QtCreator 18.0.2, 2026-02-13T10:35:24. -->
 <qtcreator>
  <data>
   <variable>Kit.IrrelevantAspects</variable>
@@ -49,8 +49,8 @@
   <variable>Profile.1</variable>
   <valuemap type="QVariantMap">
    <valuelist type="QVariantList" key="PE.Kit.RelevantAspects">
-    <value type="QString">Python.Interpreter</value>
     <value type="QString">PE.Profile.Environment</value>
+    <value type="QString">Python.Interpreter</value>
    </valuelist>
    <value type="bool" key="PE.Profile.AutoDetected">true</value>
    <value type="QString" key="PE.Profile.AutoDetectionSource">Python</value>

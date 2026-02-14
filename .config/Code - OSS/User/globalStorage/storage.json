@@ -6,19 +6,29 @@
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/user/.config/yazi"
+                "folderUri": "file:///home/user/VirtualBox%20VMs"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1770918926931"
+            }
+        ]
     },
     "windowControlHeight": 38,
     "profileAssociations": {
         "workspaces": {
             "file:///home/user": "__default__profile__",
             "file:///home/user/Rice": "__default__profile__",
-            "file:///home/user/.config/yazi": "__default__profile__"
+            "file:///home/user/.config/yazi": "__default__profile__",
+            "file:///home/user/VirtualBox%20VMs": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1769973983254": "__default__profile__",
+            "1770708981296": "__default__profile__",
+            "1770918291287": "__default__profile__",
+            "1770918926931": "__default__profile__"
+        }
     },
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
@@ -34,18 +44,28 @@
             "sideBarBackground": "#252526",
             "statusBarBackground": "#007acc",
             "statusBarNoFolderBackground": "#68217a"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 0,
+            "activityBarWidth": 0,
+            "sideBarWidth": 258,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 0,
+            "windowBorder": false
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/user/.config/yazi",
-            "backupPath": "/home/user/.config/Code - OSS/Backups/f7f20ea4fcb3a3efd1f5457a9efe710a",
+            "folder": "file:///home/user/VirtualBox%20VMs",
+            "backupPath": "/home/user/.config/Code - OSS/Backups/78fad1329e6a634cb3a3138b9013a372",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
                 "width": 1200,
-                "height": 800
+                "height": 799
             }
         },
         "openedWindows": []
@@ -110,6 +130,17 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/user/VirtualBox%20VMs",
+                                        "path": "/home/user/VirtualBox VMs",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/VirtualBox VMs"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/user/.config/yazi",
                                         "path": "/home/user/.config/yazi",
                                         "scheme": "file"
@@ -141,6 +172,17 @@
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/user/.bash_history",
+                                        "path": "/home/user/.bash_history",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.bash_history"
                                 },
                                 {
                                     "id": "openRecentFile",
@@ -855,7 +897,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -864,7 +907,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1785,6 +1829,14 @@
                     "auxiliaryBarVisible": false
                 },
                 "18e622531965a7b94ffc7bee90794ce1": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d804a0680797f7ac7fe9444550544b52": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "7fa3a36753369424c5d94aac9be7f1b5": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

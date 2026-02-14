@@ -1,0 +1,45 @@
+2026-02-12 19:44:50.931 [info] Started local extension host with pid 74650.
+2026-02-12 19:44:51.464 [error] Extension 'ms-python.debugpy CANNOT USE these API proposals 'portsAttributes, debugVisualization, contribViewsWelcome'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:44:51.464 [error] Extension 'ms-python.python CANNOT USE these API proposals 'contribEditorContentMenu, quickPickSortByLabel, testObserver, quickPickItemTooltip, terminalDataWriteEvent, terminalExecuteCommandEvent, codeActionAI, notebookReplDocument, notebookVariableProvider'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:44:51.465 [error] Extension 'ms-python.vscode-python-envs CANNOT USE these API proposals 'terminalShellEnv, terminalDataWriteEvent'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:44:51.501 [error] [ms-python.python]: editor/content is a proposed menu identifier. It requires 'package.json#enabledApiProposals: ["contribEditorContentMenu"]' and is only available when running out of dev or with the following command line switch: --enable-proposed-api ms-python.python
+2026-02-12 19:44:52.560 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-02-12 19:44:53.361 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2026-02-12 19:44:53.469 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-02-12 19:44:53.668 [info] [perf] Render performance baseline is 25ms
+2026-02-12 19:45:00.429 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-02-12 19:45:04.610 [warning] [backup tracker] suspended, ignoring register event vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json 
+2026-02-12 19:45:05.512 [info] Started local extension host with pid 75194.
+2026-02-12 19:45:06.014 [error] Extension 'ms-python.debugpy CANNOT USE these API proposals 'portsAttributes, debugVisualization, contribViewsWelcome'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:45:06.014 [error] Extension 'ms-python.python CANNOT USE these API proposals 'contribEditorContentMenu, quickPickSortByLabel, testObserver, quickPickItemTooltip, terminalDataWriteEvent, terminalExecuteCommandEvent, codeActionAI, notebookReplDocument, notebookVariableProvider'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:45:06.014 [error] Extension 'ms-python.vscode-python-envs CANNOT USE these API proposals 'terminalShellEnv, terminalDataWriteEvent'. You MUST start in extension development mode or use the --enable-proposed-api command line flag
+2026-02-12 19:45:06.029 [error] [ms-python.python]: editor/content is a proposed menu identifier. It requires 'package.json#enabledApiProposals: ["contribEditorContentMenu"]' and is only available when running out of dev or with the following command line switch: --enable-proposed-api ms-python.python
+2026-02-12 19:45:06.177 [info] ChatSessionStore: Migrating 0 chat sessions from storage service to file system
+2026-02-12 19:45:06.729 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-02-12 19:45:07.958 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2026-02-12 19:45:08.075 [error] Unable to write into user settings. Please open the user settings to correct errors/warnings in it and try again.
+2026-02-12 19:45:08.104 [warning] MCP migration: Failed to parse MCP config from vscode-userdata:/home/user/.config/Code%20-%20OSS/User/settings.json: Expected ',' or '}' after property value in JSON at position 658 (line 28 column 5)
+2026-02-12 19:45:08.318 [info] [perf] Render performance baseline is 25ms
+2026-02-12 19:45:13.868 [error] Error: The file is not displayed in the text editor because it is very large (12.08GB).
+    at jK (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:38:737)
+    at P3 (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:511:8313)
+    at lje (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:511:3090)
+    at fAe.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2739:81589)
+    at fAe.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2739:80918)
+    at async nQe.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:703:58490)
+    at async nQe.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:703:57050)
+    at async nQe.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:703:56132)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:815:23355
+    at async Sce.value (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:1990:33782)

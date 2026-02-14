@@ -1,0 +1,6 @@
+2026-02-01 21:26:25.312 [info] Extension host with pid 109337 started
+2026-02-01 21:26:25.312 [info] Skipping acquiring lock for /home/user/.config/Code - OSS/User/workspaceStorage/d804a0680797f7ac7fe9444550544b52.
+2026-02-01 21:26:25.430 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-02-01 21:26:25.481 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-02-01 21:26:25.526 [info] Extension host terminating: renderer closed the MessagePort
+2026-02-01 21:26:25.528 [info] Extension host with pid 109337 exiting with code 0
