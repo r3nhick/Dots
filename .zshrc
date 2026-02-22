@@ -173,7 +173,7 @@ alias dl='docker logs --tail=100'
 alias dc='docker compose'
 
 # rg 
-alias rg="rg --hidden --smart-case --glob='!.git/' --no-search-zip --trim --colors=line:fg:black --colors=line:style:bold --colors=path:fg:magenta --colors=match:style:nobold"
+# alias rg="rg --hidden --smart-case --glob='!.git/' --no-search-zip --trim --colors=line:fg:black --colors=line:style:bold --colors=path:fg:magenta --colors=match:style:nobold"
 
 # Python venv helpers
 alias pip-create='python -m venv venv'
@@ -201,4 +201,3 @@ mkpip() {
 eval "$(fzf --zsh)"
 eval $(thefuck --alias fk)
 eval "$(zoxide init --cmd cd zsh)"
-
