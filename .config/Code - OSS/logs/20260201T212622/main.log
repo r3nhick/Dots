@@ -1,6 +1,0 @@
-2026-02-01 21:26:22.725 [info] update#setState disabled
-2026-02-01 21:26:22.725 [info] update#ctor - updates are disabled as there is no update URL
-2026-02-01 21:26:25.568 [info] Extension host with pid 109337 exited with code: 0, signal: unknown.
-2026-02-01 21:26:25.662 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 109376]: crashed with code 15 and reason 'killed'
-2026-02-01 21:26:26.576 [info] Extension host with pid 109509 exited with code: 0, signal: unknown.
-2026-02-01 21:26:36.773 [info] Extension host with pid 109278 exited with code: 0, signal: unknown.

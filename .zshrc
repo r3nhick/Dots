@@ -101,6 +101,28 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -1 $real
 #nvim <TAB> bat <TAB> rm <TAB> mv <TAB>cp <TAB>
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers $realpath 2>/dev/null || eza --icons -1 $realpath'
 
+zstyle ':fzf-tab:complete:*:*' fzf-preview '
+file="$realpath"
+
+if [[ -d "$file" ]]; then
+  eza --icons -1 --color=always "$file"
+elif [[ "$file" =~ \.(png|jpg|jpeg|gif|webp)$ ]]; then
+  chafa --symbols braille \
+        --size "${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}" \
+        "$file"
+else
+  bat --color=always --style=numbers "$file" 2>/dev/null
+fi
+'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+export VISUAL=nvim;
+export EDITOR=nvim;
+
+
 # ==============================
 # Aliases
 # ==============================
@@ -119,6 +141,7 @@ alias llm='gpt4all-chat'
 alias yy='yazi'
 alias lg='lazygit'
 alias tt='smassh'
+alias rr='ranger'
 #alias g='ps aux | grep '
 #alias fk='thefuck'
 

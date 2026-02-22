@@ -1,7 +1,0 @@
-2026/02/13-21:07:07.300 361e Reusing MANIFEST /home/user/.config/chromium/Default/IndexedDB/https_www.keybr.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/02/13-21:07:07.300 361e Recovering log #3
-2026/02/13-21:07:07.316 361e Reusing old log /home/user/.config/chromium/Default/IndexedDB/https_www.keybr.com_0.indexeddb.leveldb/000003.log 
-2026/02/13-21:07:09.335 361f Level-0 table #5: started
-2026/02/13-21:07:09.337 361f Level-0 table #5: 5026 bytes OK
-2026/02/13-21:07:09.340 361f Delete type=0 #3
-2026/02/13-21:07:09.340 361f Manual compaction at level-0 from (begin) .. (end); will stop at (end)
