@@ -106,10 +106,6 @@ file="$realpath"
 
 if [[ -d "$file" ]]; then
   eza --icons -1 --color=always "$file"
-elif [[ "$file" =~ \.(png|jpg|jpeg|gif|webp)$ ]]; then
-  chafa --symbols braille \
-        --size "${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}" \
-        "$file"
 else
   bat --color=always --style=numbers "$file" 2>/dev/null
 fi
@@ -144,6 +140,8 @@ alias tt='smassh'
 alias rr='ranger'
 #alias g='ps aux | grep '
 #alias fk='thefuck'
+alias clock='tty-clock -C 4 -s -c -B -t'
+alias ti='termdown'
 
 # Git 
 alias ga='git add'
@@ -166,6 +164,7 @@ alias gr='git reset'
 alias gs='git status --short'
 alias gu='git pull'
 alias gw='git switch'
+alias spotify="spotify --ozone-platform=x11"
 
 # Docker
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
