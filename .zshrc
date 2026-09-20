@@ -38,7 +38,6 @@ zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # Oh My Zsh snippets
 zinit snippet OMZP::git
@@ -57,23 +56,34 @@ compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zcompdump"
 zinit cdreplay -q
 
 # ==============================
-# Powerlevel10k конфіг
-# ==============================
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-# ==============================
 # Keybindings
 # ==============================
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
-#bindkey '^R' fzf-history-widget
-
 
 # Alt + → / ← — рух по словах
 bindkey "^[[1;3C" forward-word   # Alt + →
 bindkey "^[[1;3D" backward-word  # Alt + ←
+
+# Alt+N — fzf file finder → nvim
+_fzf_file_nvim() {
+  local file=$(find . -maxdepth 5 -type f 2>/dev/null | fzf --height=40% --layout=reverse --border=rounded --prompt='nvim ▸ ')
+  if [[ -n "$file" ]]; then
+    nvim "$file"
+  fi
+}
+zle -N _fzf_file_nvim
+bindkey '^[n' _fzf_file_nvim
+
+# fzf-tab — після bindkey
+zinit light Aloxaf/fzf-tab
+
+# ==============================
+# Powerlevel10k конфіг
+# ==============================
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # ==============================
 # History
@@ -96,29 +106,30 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
-#zstyle ':fzf-tab:*' switch-group '<' '>'
-#zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border
-#zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=always $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color=always $realpath'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -1 $realpath'
 
-#nvim <TAB> bat <TAB> rm <TAB> mv <TAB>cp <TAB>
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers $realpath 2>/dev/null || eza --icons -1 $realpath'
+# compdef для команд без zsh-completions
+compdef _files nvim
+compdef _files nano
+compdef _files vim
+compdef _files cat
+compdef _files bat
+
+# fzf-tab
+zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border=rounded
+zstyle ':fzf-tab:*' prefix ''
+zstyle ':fzf-tab:*' fzf-preview-window 'left,50%,rounded'
+
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -1 $realpath'
 
 zstyle ':fzf-tab:complete:*:*' fzf-preview '
 file="$realpath"
-
 if [[ -d "$file" ]]; then
   eza --icons -1 --color=always "$file"
-
 else
   bat --color=always --style=numbers "$file" 2>/dev/null
 fi
 '
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -170,7 +181,10 @@ alias gs='git status --short'
 alias gu='git pull'
 alias gw='git switch'
 alias spotify="spotify --ozone-platform=x11"
-
+alias tree="eza --icons --tree --level=1"
+alias wth="wttr Kovel"
+alias sober="gamescope -w 1280 -h 960 -W 1920 -H 1080 -S stretch -f -r 144 --force-grab-cursor -- \
+flatpak run --env=WAYLAND_DISPLAY=gamescope-0 org.vinegarhq.Sober"
 # Docker
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dl='docker logs --tail=100'
@@ -202,7 +216,24 @@ mkpip() {
 # ==============================
 # Integrations
 # ==============================
+export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --border=rounded --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,pointer:#E6DB74,info:#E6DB74,header:#7E8E91,fg:#F8F8F2,fg+:#F8F8F2,query:#F8F8F2,disabled:#F8F8F2'
 eval "$(fzf --zsh)"
 eval $(thefuck --alias fk)
 eval "$(zoxide init --cmd cd zsh)"
 
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+
+# QODER_DISPATCHER_PATH v1
+path=("$HOME/.qoder/entry" ${path:#"$HOME/.qoder/entry"})
+export PATH
+# END QODER_DISPATCHER_PATH v1
+alias obs="obs --platform xcb"
+export PATH="$HOME/.cargo/bin:$PATH"
+alias music="python3 ~/Music/player.py"
+
+export PATH=$PATH:/home/user/.spicetify
