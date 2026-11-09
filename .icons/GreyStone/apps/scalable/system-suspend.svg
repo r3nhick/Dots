@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   viewBox="0 0 16.933 16.933"
+   id="svg7"
+   sodipodi:docname="system-suspend.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#9c4444"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.15625"
+     inkscape:cx="15.756345"
+     inkscape:cy="26.639594"
+     inkscape:window-width="1226"
+     inkscape:window-height="669"
+     inkscape:window-x="427"
+     inkscape:window-y="205"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#dfdfdf;fill-opacity:1;stroke-width:0.822057"
+     d="M 8.4664989,2.7121099 A 5.754391,5.754391 0 0 0 2.7121074,8.4665008 5.754391,5.754391 0 0 0 8.4664989,14.22089 5.754391,5.754391 0 0 0 14.220893,8.4665008 5.754391,5.754391 0 0 0 8.4664989,2.7121099 Z m 0,1.6441117 A 4.1102797,4.1102797 0 0 1 12.576781,8.4665008 4.1102797,4.1102797 0 0 1 8.4664989,12.57678 4.1102797,4.1102797 0 0 1 4.3562193,8.4665008 4.1102797,4.1102797 0 0 1 8.4664989,4.3562216 Z M 6.8304153,7.6444451 a 0.8182534,0.82213807 0 1 0 0,1.644111 h 3.2721707 a 0.8182534,0.82213807 0 1 0 0,-1.644111 z"
+     id="path4" />
+</svg>

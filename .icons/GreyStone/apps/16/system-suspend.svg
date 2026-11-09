@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   viewBox="0 0 16.933 16.933"
+   id="svg7"
+   sodipodi:docname="system-suspend.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#9c4444"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.15625"
+     inkscape:cx="15.756345"
+     inkscape:cy="26.639594"
+     inkscape:window-width="1226"
+     inkscape:window-height="669"
+     inkscape:window-x="427"
+     inkscape:window-y="205"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata2">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#dfdfdf;fill-opacity:1;stroke-width:1.20358"
+     d="M 8.4664984,0.04149749 A 8.4250038,8.4250038 0 0 0 0.04149371,8.4665012 8.4250038,8.4250038 0 0 0 8.4664984,16.891502 8.4250038,8.4250038 0 0 0 16.891507,8.4665012 8.4250038,8.4250038 0 0 0 8.4664984,0.04149749 Z m 0,2.40714401 A 6.0178605,6.0178605 0 0 1 14.484362,8.4665012 6.0178605,6.0178605 0 0 1 8.4664984,14.484361 6.0178605,6.0178605 0 0 1 2.4486379,8.4665012 6.0178605,6.0178605 0 0 1 8.4664984,2.4486415 Z m -2.39539,4.814288 a 1.1980048,1.2036924 0 1 0 0,2.4071429 h 4.7907846 a 1.1980048,1.2036924 0 1 0 0,-2.4071429 z"
+     id="path4" />
+</svg>

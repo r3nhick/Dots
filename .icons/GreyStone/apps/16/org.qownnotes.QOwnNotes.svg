@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg73"
+   sodipodi:docname="org.qownnotes.QOwnNotes.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata77">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#f5f7fa"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1341"
+     inkscape:window-height="844"
+     id="namedview75"
+     showgrid="false"
+     inkscape:zoom="6.2890624"
+     inkscape:cx="31.403727"
+     inkscape:cy="34.106833"
+     inkscape:window-x="111"
+     inkscape:window-y="110"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g877"
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs29">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter11"
+       x="-0.12048148"
+       y="-0.12078193"
+       width="1.240963"
+       height="1.2415639">
+      <feGaussianBlur
+         stdDeviation="1.7 1.7"
+         result="blur"
+         id="feGaussianBlur11" />
+    </filter>
+  </defs>
+  <g
+     id="g877"
+     transform="matrix(1.1,0,0,1.1,-3.1845928,-3.2065454)">
+    <path
+       style="fill:#f5f7fa;stroke-width:0.204426;fill-opacity:1"
+       d=""
+       id="path3" />
+    <path
+       style="fill:#dfdfdf;fill-opacity:1;stroke:none;stroke-width:0.112944;stroke-opacity:0.5"
+       d="M 8.7881607,51.47026 C 7.7229465,51.163872 5.6997805,49.084782 5.393538,47.981807 5.2287455,47.388335 5.1482133,42.106803 5.1473656,31.84025 l -0.00125,-15.259467 0.5850982,-1.174138 c 0.3217995,-0.645776 0.9571088,-1.482419 1.4117905,-1.859201 1.6942545,-1.403996 0.9138969,-1.364108 25.3552057,-1.296108 21.180577,0.05893 22.267329,0.08169 23.020608,0.482434 1.103605,0.587104 2.211099,1.676681 2.786907,2.741822 0.484852,0.896894 0.488924,1.014775 0.552583,16.010267 0.07057,16.632801 0.07349,16.592124 -1.298395,18.24764 -0.376784,0.454681 -1.213425,1.089987 -1.859203,1.411792 l -1.17415,0.585098 -22.487832,-0.02035 C 18.230264,51.697301 9.256511,51.60499 8.7881607,51.470282 Z M 45.492289,44.343851 c 1.323391,-0.708014 2.91498,-2.575134 3.484847,-4.088135 0.639706,-1.698428 0.556651,-5.019772 -0.165642,-6.623908 -0.545858,-1.212288 -1.826076,-2.701338 -2.885328,-3.355989 -0.997979,-0.616787 -2.824218,-0.938046 -4.040629,-0.710794 l -0.988812,0.184719 -0.253485,-1.828747 c -0.4955,-3.574802 -2.563224,-6.668714 -5.390956,-8.066429 -0.915815,-0.452671 -1.422702,-0.534101 -3.338612,-0.536311 -2.081797,-0.0024 -2.353234,0.04965 -3.462722,0.664253 -1.439232,0.797248 -3.401188,2.849843 -4.096111,4.285355 -0.681963,1.408751 -1.131892,3.185627 -1.13512,4.482856 -0.0028,1.066327 -0.0091,1.075499 -0.623869,0.903549 -1.349775,-0.377475 -3.058648,-0.176183 -4.316537,0.508443 -1.398074,0.760928 -2.283464,1.746845 -3.140198,3.496737 -0.535777,1.094334 -0.60874,1.511548 -0.612275,3.501244 -0.0035,1.963202 0.07244,2.421481 0.579859,3.501241 1.171688,2.49314 2.868045,3.870999 5.040897,4.094437 0.756415,0.07778 6.55939,0.128588 12.895508,0.112966 11.410692,-0.02821 11.529048,-0.03323 12.449188,-0.525478 z"
+       id="path1" />
+    <path
+       style="fill:#f5f7fa;fill-opacity:1;stroke-width:0.097776"
+       d=""
+       id="path3-9" />
+  </g>
+</svg>

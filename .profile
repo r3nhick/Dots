@@ -1,0 +1,2 @@
+LANG=uk_UA.UTF-8
+LANGUAGE=uk:ru:en_US

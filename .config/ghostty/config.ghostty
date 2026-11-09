@@ -1,0 +1,35 @@
+# --- Основні налаштування ---
+# Примусово запускаємо Zsh (фікс того, що chsh не спрацював)
+#
+
+# Шрифт (JetBrains Mono з підтримкою лігатур)
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+font-feature = ss01ba
+font-feature = liga
+# Кількість стовпців (ширина) та рядків (висота)
+window-height = 23
+window-width = 90
+
+# --- Вигляд ---
+#theme = catppuccin-mocha
+window-padding-x = 12
+window-padding-y = 12
+background = #1c1c1c
+
+# Прибираємо рамки вікна (якщо ти на тайловому менеджері типу Hyprland)
+#window-decoration = false
+
+# --- Поведінка ---
+# Закривати вікно без підтвердження
+confirm-close-surface = false
+
+# Підтримка миші
+mouse-hide-while-typing = true
+
+# Копіювання при виділенні
+copy-on-select = true
+
+# Щоб Zsh краще розумів термінал
+shell-integration = zsh
+

@@ -1,0 +1,6 @@
+omniroute/
+*.env
+.env
+ssh/
+gnupg/
+*.sqlite*

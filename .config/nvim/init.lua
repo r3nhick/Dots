@@ -1,0 +1,6 @@
+require("config.options")
+require("config.colorscheme")
+require("config.keymaps")
+require("config.autocmds")
+require("config.lazy")
+require("config.tabufline")
