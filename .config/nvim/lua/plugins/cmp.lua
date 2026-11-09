@@ -25,19 +25,29 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-          else
-            if vim.bo.filetype == "html" then
-              local ht = require("config.htmltags")
-              if ht.expand_tag() or ht.expand_html_skeleton() then
-                return
-              end
+            return
+          end
+          if vim.bo.filetype == "html" then
+            local ht = require("config.htmltags")
+            if ht.expand_tag() or ht.expand_html_skeleton() then
+              return
             end
+          end
+          local ok, tabout = pcall(require, "tabout")
+          if ok and tabout.is_enabled() then
+            tabout.tabout()
+          else
             fallback()
           end
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
+            return
+          end
+          local ok, tabout = pcall(require, "tabout")
+          if ok and tabout.is_enabled() then
+            tabout.taboutBack()
           else
             fallback()
           end

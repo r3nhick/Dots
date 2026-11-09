@@ -12,10 +12,10 @@ window-height = 23
 window-width = 90
 
 # --- Вигляд ---
-#theme = catppuccin-mocha
+theme = Black Metal (Marduk)
 window-padding-x = 12
 window-padding-y = 12
-background = #1c1c1c
+#background = #1c1c1c
 
 # Прибираємо рамки вікна (якщо ти на тайловому менеджері типу Hyprland)
 #window-decoration = false

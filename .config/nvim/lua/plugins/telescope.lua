@@ -14,8 +14,11 @@ return {
     { "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Find in current buffer" },
     { "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find oldfiles" },
     { "<leader>ma", "<cmd>Telescope marks<CR>", desc = "Find marks" },
-    { "<leader>cm", "<cmd>Telescope git_commits<CR>", desc = "Git commits" },
-    { "<leader>gt", "<cmd>Telescope git_status<CR>", desc = "Git status" },
+    -- Git (Telescope)
+    { "<leader>gb", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
+    { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Git commits" },
+    { "<leader>gf", "<cmd>Telescope git_files<CR>", desc = "Git files" },
+    { "<leader>gS", "<cmd>Telescope git_status<CR>", desc = "Git status" },
   },
   config = function()
     local telescope = require("telescope")

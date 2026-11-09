@@ -16,6 +16,27 @@ return {
       inc_rename = false,
       lsp_doc_border = false,
     },
+    routes = {
+      {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+      },
+    },
+    views = {
+      cmdline_popup = {
+        position = {
+          row = "5%",
+          col = "50%",
+        },
+        size = {
+          width = "auto",
+          height = "auto",
+        },
+      },
+      notify = {
+        timeout = 300,
+      },
+    },
   },
   dependencies = {
     "MunifTanjim/nui.nvim",

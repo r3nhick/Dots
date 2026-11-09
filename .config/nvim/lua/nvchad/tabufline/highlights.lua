@@ -1,14 +1,28 @@
+-- Load serpantinium colors
+local colors_file = vim.fn.expand("~/.local/state/serpantinum/qs_colors.json")
+local serpantinum = {}
+
+if vim.fn.filereadable(colors_file) == 1 then
+  local file = io.open(colors_file, "r")
+  if file then
+    local content = file:read("*all")
+    file:close()
+    serpantinum = vim.fn.json_decode(content) or {}
+  end
+end
+
+-- Map colors from serpantinium theme
 local colors = {
-  black = "#2e2e32",
-  black2 = "#1e1e1e",
-  one_bg2 = "#2e2e32",
-  one_bg3 = "#2e2e32",
-  white = "#abb2bf",
-  light_grey = "#5c6370",
-  red = "#e86671",
-  green = "#98c379",
-  nord_blue = "#81a2be",
-  blue = "#81a2be",
+  black = serpantinum.surface0 or "#1d211a",
+  black2 = serpantinum.crust or "#11140e",
+  one_bg2 = serpantinum.surface1 or "#282b24",
+  one_bg3 = serpantinum.surface1 or "#282b24",
+  white = serpantinum.text or "#e1e4d9",
+  light_grey = serpantinum.subtext1 or "#8d9286",
+  red = serpantinum.red or "#ffb4ab",
+  green = serpantinum.blue or "#aad291",  -- serpantinium's blue is actually green
+  nord_blue = serpantinum.teal or "#bdcbb0",
+  blue = serpantinum.blue or "#aad291",
 }
 
 vim.api.nvim_set_hl(0, "TbFill", { bg = colors.black2 })

@@ -1,19 +1,37 @@
+-- Auto-generated colorscheme from serpantinum colors
+-- Original theme structure preserved, colors updated from serpantinum
+
 vim.g.colors_name = "custom"
 
-local bg = "#1c1c1c"
-local bg_alt = "#1c1c1c"
-local fg = "#abb2bf"
-local grey = "#5c6370"
-local light_grey = "#848b98"
-local black = "#181a1f"
+-- Load serpantinum colors
+local colors_file = vim.fn.expand("~/.local/state/serpantinum/qs_colors.json")
+local serpantinum = {}
 
-local red = "#e86671"
-local orange = "#d19a66"
-local yellow = "#e5c07b"
-local green = "#98c379"
-local cyan = "#56b6c2"
-local blue = "#81a2be"
-local purple = "#c678dd"
+if vim.fn.filereadable(colors_file) == 1 then
+  local file = io.open(colors_file, "r")
+  if file then
+    local content = file:read("*all")
+    file:close()
+    serpantinum = vim.fn.json_decode(content) or {}
+  end
+end
+
+-- Map serpantinum colors to match kitty exactly
+local bg = serpantinum.surface0 or "#1d211a"  -- Same as kitty background
+local bg_alt = serpantinum.surface1 or "#282b24"
+local fg = serpantinum.text or "#e1e4d9"  -- Same as kitty foreground
+local grey = serpantinum.subtext1 or "#8d9286"  -- color8 in kitty
+local light_grey = serpantinum.subtext0 or "#c3c8bb"  -- color7 in kitty
+local black = serpantinum.crust or "#11140e"
+
+-- Use kitty's color palette
+local red = serpantinum.red or "#ffb4ab"  -- color1
+local orange = serpantinum.peach or "#a0cfcf"  -- color3
+local yellow = serpantinum.yellow or "#3e4a35"  -- color6
+local green = serpantinum.blue or "#aad291"  -- color2 (serpantinum's blue is green!)
+local cyan = serpantinum.teal or "#bdcbb0"  -- color4
+local blue = serpantinum.blue or "#aad291"  -- color2 (main accent)
+local purple = serpantinum.sapphire or "#2e4f1c"  -- color5
 
 local diff_add = "#31392b"
 local diff_delete = "#382b2c"
@@ -36,7 +54,7 @@ hl("FloatBorder", { fg = blue, bg = bg_alt })
 hl("FloatTitle", { fg = blue, bg = bg_alt })
 hl("ColorColumn", { bg = bg_alt })
 hl("CursorColumn", { bg = bg_alt })
-hl("CursorLine", { bg = "#2e2e32" })
+hl("CursorLine", { bg = serpantinum.surface1 or "#2e2e32" })
 hl("CursorLineNr", { fg = yellow })
 
 -- Mode indicator (modicator.nvim)
@@ -82,17 +100,17 @@ hl("CurSearch", { fg = bg, bg = orange })
 hl("Substitute", { fg = bg, bg = green })
 
 -- Visual / selection
-hl("Visual", { bg = "#2e2e32" })
+hl("Visual", { bg = serpantinum.surface1 or "#2e2e32" })
 hl("VisualNOS", { fg = fg, bg = bg_alt, underline = true })
 hl("WildMenu", { fg = bg, bg = blue })
 
 -- Popup menu
-hl("Pmenu", { fg = fg, bg = "#1c1c1c" })
-hl("PmenuSel", { fg = fg, bg = "#2e2e32", bold = true })
-hl("PmenuSbar", { bg = "#1c1c1c" })
+hl("Pmenu", { fg = fg, bg = serpantinum.surface0 or "#1c1c1c" })
+hl("PmenuSel", { fg = fg, bg = serpantinum.surface1 or "#2e2e32", bold = true })
+hl("PmenuSbar", { bg = serpantinum.surface0 or "#1c1c1c" })
 hl("PmenuThumb", { bg = grey })
-hl("PmenuMatch", { fg = cyan, bg = "#1c1c1c" })
-hl("PmenuMatchSel", { fg = fg, bg = "#2e2e32", bold = true })
+hl("PmenuMatch", { fg = cyan, bg = serpantinum.surface0 or "#1c1c1c" })
+hl("PmenuMatchSel", { fg = fg, bg = serpantinum.surface1 or "#2e2e32", bold = true })
 
 -- Syntax
 hl("Comment", { fg = grey, italic = true })
@@ -245,7 +263,7 @@ hl("@tag.attribute.ts", { fg = yellow })
 -- Neo-tree
 hl("NeoTreeNormal", { fg = fg, bg = bg })
 hl("NeoTreeNormalNC", { fg = fg, bg = bg })
-hl("NeoTreeCursorLine", { bg = "#2e2e32" })
+hl("NeoTreeCursorLine", { bg = serpantinum.surface1 or "#2e2e32" })
 hl("NeoTreeFloatBorder", { fg = blue, bg = bg_alt })
 hl("NeoTreeFloatTitle", { fg = blue })
 hl("NeoTreeRootName", { fg = yellow, bold = true })
@@ -285,7 +303,7 @@ hl("TelescopeTitle", { fg = bg, bg = blue })
 hl("TelescopePreviewTitle", { fg = bg, bg = green })
 hl("TelescopePromptTitle", { fg = bg, bg = blue })
 hl("TelescopeResultsTitle", { fg = bg, bg = blue })
-hl("TelescopeSelection", { fg = fg, bg = "#2e2e32" })
+hl("TelescopeSelection", { fg = fg, bg = serpantinum.surface1 or "#2e2e32" })
 hl("TelescopeSelectionCaret", { fg = blue })
 hl("TelescopeMultiSelection", { fg = yellow })
 hl("TelescopeMatching", { fg = cyan, bold = true })

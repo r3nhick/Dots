@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -o interactive ]]; then
-  fastfetch
-fi
+# if [[ -o interactive ]]; then
+# #  fastfetch
+# #fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -24,7 +24,7 @@ if [[ ! -d "$ZINIT_HOME" ]]; then
     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 source "$ZINIT_HOME/zinit.zsh"
-PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # ==============================
 # Powerlevel10k via Zinit (швидке завантаження)
@@ -67,15 +67,69 @@ bindkey '^[w' kill-region
 bindkey "^[[1;3C" forward-word   # Alt + →
 bindkey "^[[1;3D" backward-word  # Alt + ←
 
-# Alt+N — fzf file finder → nvim
+# Alt+N — fzf file finder → nvim з preview
 _fzf_file_nvim() {
-  local file=$(find . -maxdepth 5 -type f 2>/dev/null | fzf --height=40% --layout=reverse --border=rounded --prompt='nvim ▸ ')
+  local file=$(find . -maxdepth 5 -type f 2>/dev/null | fzf \
+    --height=80% \
+    --layout=reverse \
+    --border=rounded \
+    --preview-window='right,60%,border-rounded' \
+    --preview='
+      if command -v bat &>/dev/null; then
+        bat --color=always --style=numbers --line-range=:200 {} 2>/dev/null
+      else
+        head -200 {} 2>/dev/null
+      fi
+    ' \
+    --prompt="nvim ▸ ")
   if [[ -n "$file" ]]; then
     nvim "$file"
   fi
 }
 zle -N _fzf_file_nvim
 bindkey '^[n' _fzf_file_nvim
+
+# Alt+C — cd з tree preview (включно з прихованими)
+_fm_cd_widget() {
+  local result
+  # Використати fd якщо доступний, інакше find
+  if command -v fd &>/dev/null; then
+    result=$(fd -H -t d -d 3 . 2>/dev/null | fzf \
+      --height=80% \
+      --layout=reverse \
+      --border=rounded \
+      --preview-window='right,60%,border-rounded' \
+      --preview='
+        if command -v eza &>/dev/null; then
+          eza --tree -L2 -a --icons=always --color=always --no-quotes {} 2>/dev/null | head -200
+        else
+          ls -la {} 2>/dev/null | head -200
+        fi
+      ' \
+      --prompt="cd ▸ ")
+  else
+    result=$(find . -maxdepth 3 -type d 2>/dev/null | fzf \
+      --height=80% \
+      --layout=reverse \
+      --border=rounded \
+      --preview-window='right,60%,border-rounded' \
+      --preview='
+        if command -v eza &>/dev/null; then
+          eza --tree -L2 -a --icons=always --color=always --no-quotes {} 2>/dev/null | head -200
+        else
+          ls -la {} 2>/dev/null | head -200
+        fi
+      ' \
+      --prompt="cd ▸ ")
+  fi
+
+  if [[ -n "$result" && -d "$result" ]]; then
+    cd "$result"
+    zle reset-prompt
+  fi
+}
+zle -N _fm_cd_widget
+bindkey '^[c' _fm_cd_widget
 
 # fzf-tab — після bindkey
 zinit light Aloxaf/fzf-tab
@@ -114,20 +168,284 @@ compdef _files vim
 compdef _files cat
 compdef _files bat
 
-# fzf-tab
-zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border=rounded
+# ==============================
+# fzf-tab з розширеним прев'ю
+# ==============================
+zstyle ':fzf-tab:*' fzf-flags --height=80% --layout=reverse --border=rounded --preview-window='right,50%,border-rounded'
 zstyle ':fzf-tab:*' prefix ''
-zstyle ':fzf-tab:*' fzf-preview-window 'left,50%,rounded'
 
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -1 $realpath'
+#
+# # Збереження останньої команди
+_store_last_cmd() {
+  LAST_HIST_CMD="$1"
+}
 
+# Очищення Kitty зображень з виключенням для fastfetch
+_cleanup_kitty_images() {
+  if [[ "$LAST_HIST_CMD" == *"fastfetch"* ]]; then
+    return 0
+  fi
+  printf '\e_Ga=d,d=A\e\\' 2>/dev/null >/dev/tty
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec _store_last_cmd
+# add-zsh-hook preexec _cleanup_kitty_images
+add-zsh-hook precmd _cleanup_kitty_images
+
+# Очищення при Ctrl+C (SIGINT)
+TRAPINT() {
+  _cleanup_kitty_images
+  return 130
+}
+
+# Очищення при натисканні Enter
+_accept_line_with_cleanup() {
+  _cleanup_kitty_images
+  zle .accept-line
+}
+zle -N accept-line _accept_line_with_cleanup
+
+# Функція для розширеного прев'ю файлів (на основі fm)
+_fzf_preview_file() {
+  local f="$1"
+  local mime kind
+
+  # Якщо файл не існує
+  [[ -z "$f" || ! -e "$f" ]] && return 0
+
+  # Директорія - показати тільки tree структуру (як в fm)
+  if [[ -d "$f" ]]; then
+    if command -v eza &>/dev/null; then
+      eza --tree -L2 --icons=always --color=always --no-quotes -- "$f" 2>/dev/null | head -200
+    else
+      ls -la -- "$f" | head -200
+    fi
+    return 0
+  fi
+
+  # Отримати MIME тип та encoding
+  mime=$(file --mime-type -b -- "$f" 2>/dev/null)
+  local enc=$(file --mime-encoding -b -- "$f" 2>/dev/null)
+
+  # Markdown файли
+  if [[ "$f" =~ \.(md|markdown)$ ]]; then
+    if command -v glow &>/dev/null; then
+      glow -s dark "$f" 2>/dev/null | head -200
+      return 0
+    elif command -v mdcat &>/dev/null; then
+      mdcat "$f" 2>/dev/null | head -200
+      return 0
+    fi
+  fi
+
+  # Зображення - показати через chafa
+  if [[ "$mime" =~ ^image/ ]]; then
+    if command -v chafa &>/dev/null; then
+      chafa -f symbols -s 60x30 "$f" 2>/dev/null
+    elif command -v kitty &>/dev/null && [[ -n "$KITTY_WINDOW_ID" ]]; then
+      kitty +kitten icat --align left --place 60x30@0x0 "$f" 2>/dev/null
+    else
+      file -b -- "$f"
+      ls -lh -- "$f"
+    fi
+    return 0
+  fi
+
+  # PDF файли
+  if [[ "$mime" == "application/pdf" ]]; then
+    if command -v pdftotext &>/dev/null; then
+      pdftotext -l 2 "$f" - 2>/dev/null | head -100
+    else
+      file -b -- "$f"
+      ls -lh -- "$f"
+    fi
+    return 0
+  fi
+
+  # Відео файли
+  if [[ "$mime" =~ ^video/ ]]; then
+    if command -v mediainfo &>/dev/null; then
+      mediainfo "$f" 2>/dev/null | head -30
+    elif command -v ffprobe &>/dev/null; then
+      ffprobe -hide_banner "$f" 2>&1 | head -30
+    else
+      file -b -- "$f"
+      ls -lh -- "$f"
+    fi
+    return 0
+  fi
+
+  # Текстові файли (не бінарні)
+  if [[ "$enc" != "binary" ]]; then
+    if command -v bat &>/dev/null; then
+      bat --color=always --style=numbers --line-range=:200 -- "$f" 2>/dev/null
+    else
+      head -n 200 -- "$f"
+    fi
+    return 0
+  fi
+
+  # Архіви
+  case "$mime" in
+    application/zip|application/x-tar|application/gzip|application/x-xz|application/x-bzip2|application/x-7z-compressed|application/zstd|application/x-zstd)
+      if command -v bsdtar &>/dev/null; then
+        bsdtar -tf "$f" 2>/dev/null | head -100
+      elif command -v tar &>/dev/null; then
+        tar -tf "$f" 2>/dev/null | head -100
+      else
+        file -b -- "$f"
+      fi
+      return 0
+      ;;
+  esac
+
+  # Для всього іншого
+  file -b -- "$f"
+  ls -lh -- "$f"
+}
+
+# Застосування прев'ю для fzf-tab (inline код для роботи в subshell)
 zstyle ':fzf-tab:complete:*:*' fzf-preview '
-file="$realpath"
-if [[ -d "$file" ]]; then
-  eza --icons -1 --color=always "$file"
-else
-  bat --color=always --style=numbers "$file" 2>/dev/null
+local f="$realpath"
+[[ -z "$f" || ! -e "$f" ]] && return 0
+
+# Очистити попередні Kitty зображення на початку
+printf "\e_Ga=d,d=A\e\\\\" 2>/dev/null >/dev/tty
+
+# Директорія - tree структура
+if [[ -d "$f" ]]; then
+  if command -v eza &>/dev/null; then
+    eza --tree -L2 --icons=always --color=always --no-quotes -- "$f" 2>/dev/null | head -200
+  else
+    ls -la -- "$f" | head -200
+  fi
+  return 0
 fi
+
+# MIME тип
+local mime=$(file --mime-type -b -- "$f" 2>/dev/null)
+local enc=$(file --mime-encoding -b -- "$f" 2>/dev/null)
+
+# Markdown
+if [[ "$f" =~ \.(md|markdown)$ ]]; then
+  if command -v glow &>/dev/null; then
+    glow -s dark "$f" 2>/dev/null | head -200
+  elif command -v mdcat &>/dev/null; then
+    mdcat "$f" 2>/dev/null | head -200
+  fi
+  return 0
+fi
+
+# Зображення
+if [[ "$mime" =~ ^image/ ]]; then
+  if command -v kitten &>/dev/null && [[ -n "$KITTY_WINDOW_ID" ]]; then
+    # Використати змінні fzf для правильного позиціонування
+    local cols=${FZF_PREVIEW_COLUMNS:-60} lines=${FZF_PREVIEW_LINES:-40}
+    local left=${FZF_PREVIEW_LEFT:-0} top=${FZF_PREVIEW_TOP:-0}
+    kitten icat --clear --transfer-mode=memory --stdin=no \
+      --place="${cols}x${lines}@${left}x${top}" "$f" </dev/null 2>/dev/null
+  elif command -v chafa &>/dev/null; then
+    chafa -f symbols -s 80x50 "$f" 2>/dev/null
+  else
+    file -b -- "$f"; ls -lh -- "$f"
+  fi
+  return 0
+fi
+
+# PDF
+if [[ "$mime" == "application/pdf" ]]; then
+  # Спробувати показати як зображення (перша сторінка)
+  if command -v pdftoppm &>/dev/null && command -v kitten &>/dev/null && [[ -n "$KITTY_WINDOW_ID" ]]; then
+    local tmpimg="/tmp/pdf_preview_$$.png"
+    if pdftoppm -png -f 1 -singlefile "$f" "${tmpimg%.png}" 2>/dev/null; then
+      local cols=${FZF_PREVIEW_COLUMNS:-60} lines=${FZF_PREVIEW_LINES:-40}
+      local left=${FZF_PREVIEW_LEFT:-0} top=${FZF_PREVIEW_TOP:-0}
+      kitten icat --clear --transfer-mode=memory --stdin=no \
+        --place="${cols}x${lines}@${left}x${top}" "$tmpimg" </dev/null 2>/dev/null
+      rm -f "$tmpimg"
+      return 0
+    fi
+    rm -f "$tmpimg"
+  fi
+  # Fallback на текст
+  if command -v pdftotext &>/dev/null; then
+    pdftotext -l 3 "$f" - 2>/dev/null | head -100
+  else
+    file -b -- "$f"; ls -lh -- "$f"
+  fi
+  return 0
+fi
+
+# Відео
+if [[ "$mime" =~ ^video/ ]]; then
+  # Спробувати показати thumbnail
+  if command -v kitten &>/dev/null && [[ -n "$KITTY_WINDOW_ID" ]]; then
+    local tmpthumb="/tmp/video_thumb_$$.png"
+    local success=0
+
+    # Спробувати ffmpegthumbnailer (швидше)
+    if command -v ffmpegthumbnailer &>/dev/null; then
+      ffmpegthumbnailer -i "$f" -o "$tmpthumb" -s 1024 -c png >/dev/null 2>&1 && [[ -s "$tmpthumb" ]] && success=1
+    fi
+
+    # Fallback на ffmpeg
+    if [[ $success -eq 0 ]] && command -v ffmpeg &>/dev/null; then
+      ffmpeg -nostdin -v error -ss 3 -i "$f" -frames:v 1 -vf "scale=1024:-2" -y "$tmpthumb" >/dev/null 2>&1 && [[ -s "$tmpthumb" ]] && success=1
+      # Якщо ss 3 не спрацювало, спробувати без -ss
+      [[ $success -eq 0 ]] && ffmpeg -nostdin -v error -i "$f" -frames:v 1 -vf "scale=1024:-2" -y "$tmpthumb" >/dev/null 2>&1 && [[ -s "$tmpthumb" ]] && success=1
+    fi
+
+    # Показати thumbnail якщо згенеровано
+    if [[ $success -eq 1 ]]; then
+      local cols=${FZF_PREVIEW_COLUMNS:-60} lines=${FZF_PREVIEW_LINES:-40}
+      local left=${FZF_PREVIEW_LEFT:-0} top=${FZF_PREVIEW_TOP:-0}
+      kitten icat --clear --transfer-mode=memory --stdin=no \
+        --place="${cols}x${lines}@${left}x${top}" "$tmpthumb" </dev/null 2>/dev/null
+      rm -f "$tmpthumb"
+      return 0
+    fi
+    rm -f "$tmpthumb"
+  fi
+
+  # Fallback на метадані
+  if command -v mediainfo &>/dev/null; then
+    mediainfo "$f" 2>/dev/null | head -30
+  elif command -v ffprobe &>/dev/null; then
+    ffprobe -hide_banner "$f" 2>&1 | head -30
+  else
+    file -b -- "$f"; ls -lh -- "$f"
+  fi
+  return 0
+fi
+
+# Текстові файли
+if [[ "$enc" != "binary" ]]; then
+  if command -v bat &>/dev/null; then
+    bat --color=always --style=numbers --line-range=:200 -- "$f" 2>/dev/null
+  else
+    head -n 200 -- "$f"
+  fi
+  return 0
+fi
+
+# Архіви
+case "$mime" in
+  application/zip|application/x-tar|application/gzip|application/x-xz|application/x-bzip2|application/x-7z-compressed|application/zstd|application/x-zstd)
+    if command -v bsdtar &>/dev/null; then
+      bsdtar -tf "$f" 2>/dev/null | head -100
+    elif command -v tar &>/dev/null; then
+      tar -tf "$f" 2>/dev/null | head -100
+    else
+      file -b -- "$f"
+    fi
+    return 0
+    ;;
+esac
+
+# Fallback
+file -b -- "$f"
+ls -lh -- "$f"
 '
 
 
@@ -140,26 +458,69 @@ export EDITOR=nvim;
 # ==============================
 alias ls='eza --icons=always'
 alias la='eza --icons=always -a'
+alias ll='eza --icons=always -l -a'
+alias lt='eza --tree -L2 --icons=always --color=always --no-quotes'
+alias lth='eza --tree -L2 --icons=always --color=always --no-quotes -l'
+alias lts='eza --tree --icons=always --color=always --no-quotes -L '
+alias lths='eza --tree --icons=always --color=always --no-quotes -l -L'
 alias cat='bat'
 alias n='nvim'
 alias cl='clear'
 alias in='sudo pacman -S'
 alias up='sudo pacman -Syu'
 alias r='sudo pacman -Rns'
-alias ins='sudo pacman -S $(pacman -Slq | fzf)'
+alias rp='paru -Rns'  # видалення через paru
+alias upp='paru -Syu'  # оновлення через paru (включно з AUR)
+alias ytd='yt-dlp -x --audio-format mp3'
+# Функція для встановлення пакетів з preview
+ins() {
+  local selected
+  selected=$(pacman -Slq | fzf \
+    --height=80% \
+    --layout=reverse \
+    --border=rounded \
+    --preview-window="right,60%,border-rounded" \
+    --preview="pacman -Si {} 2>/dev/null | grep -E \"^(Repository|Name|Version|Description|Download Size|Installed Size|Depends On)\" || echo \"Loading...\"" \
+    --prompt="Install ▸ " \
+    --header="Select package to install (Tab: multi-select, Enter: install)" \
+    --multi)
+
+  if [[ -n "$selected" ]]; then
+    sudo pacman -S $selected
+  fi
+}
+
+# Функція для встановлення пакетів з AUR через paru (з preview)
+inp() {
+  local selected
+  selected=$(paru -Slq | fzf \
+    --height=80% \
+    --layout=reverse \
+    --border=rounded \
+    --preview-window='right,60%,border-rounded' \
+    --preview='paru -Si {} 2>/dev/null || echo "Loading..."' \
+    --prompt='Install (paru) ▸ ' \
+    --header='Select package to install from repos+AUR (Tab: multi-select, Enter: install)' \
+    --multi)
+
+  if [[ -n "$selected" ]]; then
+    paru -S $selected
+  fi
+}
 alias rf='rm -rf'
 alias tld='tldr'
 alias llm='gpt4all-chat'
 alias yy='yazi'
 alias lg='lazygit'
-alias tt='smassh'
+#alias tt='smassh'
 alias rr='ranger'
+alias ff='fm'  # fm файловий менеджер замість fzf
 #alias g='ps aux | grep '
 #alias fk='thefuck'
 alias clock='tty-clock -C 4 -s -c -B -t'
 alias ti='termdown'
 
-# Git 
+# Git
 alias ga='git add'
 alias gap='ga --patch'
 alias gb='git branch'
@@ -183,14 +544,12 @@ alias gw='git switch'
 alias spotify="spotify --ozone-platform=x11"
 alias tree="eza --icons --tree --level=1"
 alias wth="wttr Kovel"
-alias sober="gamescope -w 1280 -h 960 -W 1920 -H 1080 -S stretch -f -r 144 --force-grab-cursor -- \
-flatpak run --env=WAYLAND_DISPLAY=gamescope-0 org.vinegarhq.Sober"
 # Docker
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dl='docker logs --tail=100'
 alias dc='docker compose'
 
-# rg 
+# rg
 # alias rg="rg --hidden --smart-case --glob='!.git/' --no-search-zip --trim --colors=line:fg:black --colors=line:style:bold --colors=path:fg:magenta --colors=match:style:nobold"
 
 # Python venv helpers
@@ -216,8 +575,14 @@ mkpip() {
 # ==============================
 # Integrations
 # ==============================
-export FZF_DEFAULT_OPTS='--height=40% --layout=reverse --border=rounded --color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,pointer:#E6DB74,info:#E6DB74,header:#7E8E91,fg:#F8F8F2,fg+:#F8F8F2,query:#F8F8F2,disabled:#F8F8F2'
 eval "$(fzf --zsh)"
+# FZF colors відключено - використовуємо стандартний стиль як у fzf-tab
+# [ -f ~/.config/fzf/fzf-colors.zsh ] && source ~/.config/fzf/fzf-colors.zsh
+
+# Переприв'язати Alt+C та Alt+N після завантаження fzf
+bindkey '^[c' _fm_cd_widget
+bindkey '^[n' _fzf_file_nvim
+
 eval $(thefuck --alias fk)
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -236,4 +601,55 @@ alias obs="obs --platform xcb"
 export PATH="$HOME/.cargo/bin:$PATH"
 alias music="python3 ~/Music/player.py"
 
+# ==============================
+# FM Integration (замість fzf для навігації)
+# ==============================
+
+# Функція cd з fm інтеграцією
+# Використання: просто введіть 'cdf' для інтерактивного вибору
+cdf() {
+  local dir
+  # Викликаємо fm і чекаємо на вибір директорії
+  dir=$(fm 2>/dev/tty)
+
+  if [[ -z "$dir" ]]; then
+    return 0
+  fi
+
+  # Якщо обрано файл, переходимо до його директорії
+  if [[ -f "$dir" ]]; then
+    dir=$(dirname "$dir")
+  fi
+
+  # Переходимо до директорії
+  if [[ -d "$dir" ]]; then
+    cd "$dir"
+  fi
+}
+
+# Функція для швидкого відкриття файлу через fm у nvim
+fmv() {
+  local file
+  file=$(fm 2>/dev/tty)
+
+  if [[ -z "$file" ]]; then
+    return 0
+  fi
+
+  if [[ -f "$file" ]]; then
+    nvim "$file"
+  elif [[ -d "$file" ]]; then
+    cd "$file"
+  fi
+}
+# Tuxedo / todo.txt configuration
+export TODO_DIR="$HOME/.config/tuxedo/files"
+export TODO_FILE="$TODO_DIR/todo.txt"
+export DONE_FILE="$TODO_DIR/done.txt"
+
 export PATH=$PATH:/home/user/.spicetify
+export PATH="$(npm config get prefix)/bin:$PATH"
+
+# >>> termium >>>
+case ":$PATH:" in *:'/home/user/.local/bin':*) ;; *) export PATH='/home/user/.local/bin':"$PATH" ;; esac
+# <<< termium <<<

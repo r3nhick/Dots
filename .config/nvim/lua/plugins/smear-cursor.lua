@@ -1,5 +1,6 @@
 return {
   "rachartier/smear-cursor.nvim",
+  enabled = false, -- вимкнено: несумісний з Neovim 0.12 (nvim_win_set_option deprecated)
   event = "VeryLazy",
   opts = {
     cursor_color = "#abb2bf",
